@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夕飯の献立ランダム選択</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+        <!--トップメニュー-->
+        <header class="header">
+            <!-- main visual -->
+            <div class="header-above">
+                        <ul class="nav clearfix">
+                            <li class="nav-item"><a href="#generate">サービス</a></li>
+                            <li class="nav-item"><a href="#history">一覧を確認</a></li>
+                            <li class="nav-item"><a href="#add-menu-form">メニュー追加</a></li>
+                            <li class="nav-item"><a href="#weare">私たち</a></li>
+                            <li class="nav-item"><a href="#review-form">レビュー</a></li>
+                            <li class="nav-item"><a href="#contact">問合せ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+   
+    <!--bodyはここから-->
+    <h2 id="date"></h2>
+    <h1>毎日の献立、もう悩まない！</h1>
+    <img src="./img/logo.png" alt="logo">
+    <br>
+    <p>献立を決める・・・<br>
+        毎日繰り返される大切だけどちょっと面倒なイベント、それを「MeNEW」が解決します</p>
+    <br><br>
+
+    <button id="generate">献立を決める!</button>
+    <h2 id="menu"></h2>
+    <img id="menu-image" src="" alt="">
+    <br><br><br>
+
+    <!-- 履歴追加フォーム labelを使用-->
+    <h3>自分で献立を追加</h3>
+        <form id="manual-entry-form">
+            <label for="manual-date">日付（例：24/11/07）:</label>
+            <input type="text" id="manual-date" placeholder="日付を入力" required><br><br>
+            <label for="manual-menu">献立名：</label>
+            <input type="text" id="manual-menu" placeholder="献立名を入力" required><br><br>
+            <button type="submit">履歴に追加</button>
+        </form>
+
+    <br><br>
+
+<!--履歴を確認-->
+    <table id="history" border="1">
+        <thead>
+            <h3>今までの夕食メニュー</h3>
+            <tr>
+                <th>日付</th>
+                <th>選択された料理</th>
+                <th>番号</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <br>
+    <br>
+<!-- ローカルストレージに保存した履歴の削除 -->
+    <button id="clear-history">履歴をクリア</button>
+
+
+<h3>新しいメニューを追加</h3>
+<form id="add-menu-form">
+    <label for="new-menu-name">新しいメニュー名：</label>
+    <input type="text" id="new-menu-name" required><br><br>
+    <label for="new-menu-img">画像ファイル名：</label>
+    <input type="text" id="new-menu-img" required><br><br>
+    <button type="submit">メニューを追加</button>
+</form>
+<br><br>
+
+<h3>私たちについて</h3>
+<div id="weare">
+    <p>家族が笑顔でいられるのは、それぞれのメンバーが役割を果たして、互いに思い遣れているから、だと考えています。<br>
+       その中でも大切な家族の食事を作ることは、とても尊い仕事です。<br><br>
+       「今日何食べたい？」「なんでもいいよ」、<br>
+        こんなやりとりのイライラ、、、私たちにお任せください。<br><br>
+    
+        大切な一家団欒を守るため、サービスを展開していきます。   </p>
+</div>
+
+<!-- カスタマーレビューセクション -->
+<h3>カスタマーレビュー</h3>
+
+<!-- レビュー追加フォームを作成（５段階評価） -->
+<form id="review-form">
+    <label for="review-initial">イニシャル（例：T.M.）:</label>
+    <input type="text" id="review-initial" placeholder="イニシャルを入力" required><br><br>
+
+    <label for="review-rating">評価（1〜5の星で評価）:</label>
+    <select id="review-rating" required>
+        <option value="1">★☆☆☆☆</option>
+        <option value="1.5">★☆☆☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="2.5">★★☆☆☆☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="3.5">★★★☆☆☆</option>
+        <option value="4">★★★★☆</option>
+        <option value="4.5">★★★★☆☆</option>
+        <option value="5">★★★★★</option>
+    </select><br><br>
+
+    <label for="review-comment">フリーコメント:</label><br>
+    <textarea id="review-comment" rows="4" cols="50" placeholder="レビューを書いてください" required></textarea><br><br>
+
+    <button type="submit">レビューを投稿</button>
+</form>
+
+<hr>
+
+<!-- レビュー表示セクション -->
+<h3>レビュー一覧</h3>
+<div id="review-list">
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js" defer></script>
+
+</html>
